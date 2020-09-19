@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Challenge</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <form>
+        <fieldset>
+
+
+            <legend class="legendtop">Order Form</legend>
+
+            <p>
+                <label class="label" for="fname">Full Name:</label>
+                <br>
+                <input type="text" required="required" id="fname" name="fulname" placeholder="Enter your name">
+            </p>
+            <p>
+                <label class="label" for="phone">Telephone:</label>
+                <br>
+                <input type="tel" required="required" id="phone" name="phone"
+                    pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Pattern: 1-234-567-8910">
+            </p>
+            <p>
+                <label class="label" for="email">Email address:</label>
+                <br>
+                <input type="email" id="email" required="required" placeholder="Enter your emaii address">
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend class="legendbottom">Emulators</legend>
+            <label class="label" for="quantity">Quantity(maximum 5):</label>
+            <input type="text" id="quantity" name="quantity" size="3">
+            <p>
+                <label class="label" for="Emulator"></label>
+
+                <select name="Emulator" id="Emulator">
+                    <option value="Ataria">Ataria</option>
+                    <option value="Sega Genesis">Sega Genesis</option>
+                    <option value="Nintendo">Nintendo</option>
+                    <option value="Play Station">Play Station</option>
+                    <option value="xBox">xBox</option>
+                </select>
+            </p>
+
+            <button class="submit" type="button">Submit</button>
+
+        </fieldset>
+    </form>
+
+
+</body>
+
+</html>
