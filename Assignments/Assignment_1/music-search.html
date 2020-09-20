@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Music Download</title>
+  <title>Music Search</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -19,246 +19,295 @@
 
   <link rel="stylesheet" href="styles.css">
 
+  <script>
+    $(function () {
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  </script>
 </head>
 
 <body>
-  <br><br>
+  <br>
   <div class="container">
     <form>
-      <fieldset>
-        <p>
-          <label for="artist">Artist:</label>
-          <input type="text" id="artist" name="Artist">
+      <fieldset class="border p-2">
+        <legend class="w-auto">Music Search</legend>
+        <div class="form-group row">
+          <label for="artist" class="col-sm-2 col-form-label">Artist:</label>
+          <div class="col-sm-8">
+            <input type="text" id="artist" class="form-control" name="Artist" placeholder="Enter the Artist Name">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Song Title" class="col-sm-2 col-form-label">Song:</label>
+          <div class="col-sm-8">
+            <input type="text" id="Song Title" class="form-control" name="Song Title"
+              placeholder="Enter the Song Title">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="Genre" class="col-sm-2 col-form-label">Genre:</label>
+          <div class="col-sm-8">
+            <div class="btn-group">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                Select Genre
+              </button>
+              <div class="dropdown-menu">
+                <a class="dropdown-item">Hip Pop</a>
+                <a class="dropdown-item">Pop</a>
+                <a class="dropdown-item">Country</a>
+                <a class="dropdown-item">K-Pop</a>
+                <a class="dropdown-item">Classic</a>
+                <a class="dropdown-item">Dance</a>
+              </div>
+            </div>
+            <!--<select name="Genre" id="Genre">
+                <option value="Genre">Select a Genre</option>
+                <option value="Country">Country</option>
+                <option value="Hip-Hop">Hip-Hop</option>
+                <option value="K-Pop">K-Pop</option>
+                <option value="Pop/Rap">Pop/Rap</option>
+                <option value="Classic">Classic</option>
+            </select>
+          -->
+          </div>
+          <div class="col-sm-2">
+            <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> Search</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  <br><br>
+  <div class="container">
+    <div>
+      <table>
+        <tr>
+          <th>Artist</th>
+          <th>
+            <span class="d-inline-block" data-toggle="tooltip" data-placement="top" title="Download">
+              <button class="btn btn-sm" disabled>
+                <i class="fas fa-cloud"></i>
+              </button>
+            </span>
+          </th>
+          <th>Time</th>
+          <th>Track Title</th>
+          <th>Album</th>
+          <th>Genre</th>
+          <th>Ratings</th>
+        </tr>
+        <tr>
+          <td>Justin Bieber</td>
+          <td><button class="btn btn-sm"><i class="fas fa-cloud-download-alt"></i></button></td>
+          <td>3:45</td>
+          <td>Holy </td>
+          <td>Holy (feat. Chance the Rapper)</td>
+          <td>Pop</td>
+          <td nowrap>
+            <div class="rating">
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="far fa-star"></span>
+              <span class="far fa-star"></span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Keith Urban & P!nk</td>
+          <td><button class="btn btn-sm"><i class="fas fa-cloud-download-alt"></i></button></td>
+          <td>3:35</td>
+          <td>One Too Many</td>
+          <td>The Speed Of Now</td>
+          <td>Country</td>
+          <td>
+            <div class="rating">
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Luke Combs</td>
+          <td><button class="btn btn-sm"><i class="fas fa-cloud-download-alt"></i></button></td>
+          <td>2:32</td>
+          <td>Without You</td>
+          <td>What you see </td>
+          <td>Conuntry</td>
+          <td>
+            <div class="rating">
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star-half-alt checked"></span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Andrew Jannakos</td>
+          <td><button class="btn btn-sm"><i class="fas fa-cloud-download-alt"></i></button></td>
+          <td>1:35</td>
+          <td>Gone Too Soon</td>
+          <td>Gone Too Soon Andrew Jannakos</td>
+          <td>Country</td>
+          <td>
+            <div class="rating">
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star-half-alt checked"></span>
+              <span class="far fa-star"></span>
+              <span class="far fa-star"></span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Sam Smith</td>
+          <td><button class="btn btn-sm"><i class="fas fa-cloud-download-alt"></i></button></td>
+          <td>3:30</td>
+          <td>Diamonds</td>
+          <td>Diamonds Sam Smith</td>
+          <td>Pop</td>
+          <td>
+            <div class="rating">
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="far fa-star"></span>
+              <span class="far fa-star"></span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Cardi B</td>
+          <td><button class="btn btn-sm"><i class="fas fa-cloud-download-alt"></i></button></td>
+          <td>2:30</td>
+          <td>WAP (feat. Megan Thee Stallion)</td>
+          <td>WAP</td>
+          <td>Hip-Hop / Rap</td>
+          <td>
+            <div class="rating">
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="far fa-star"></span>
+              <span class="far fa-star"></span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Eric Church</td>
+          <td><button class="btn btn-sm"><i class="fas fa-cloud-download-alt"></i></button></td>
+          <td>2:45</td>
+          <td>Stick That in Your Country Song</td>
+          <td>Stick That in Your Country Song Eric Church</td>
+          <td>Country</td>
+          <td>
+            <div class="rating">
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star-half-alt checked"></span>
+              <span class="far fa-star"></span>
+            </div>
+          </td>
+        </tr>
 
-        </p>
-        <p>
-          <label for="Song Title">Song Title:</label>
-          <input type="text" id="Song Title" name="Song Title">
-        </p>
-        <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> Search</button>
-        <br><br>
+        <tr>
+          <td>Blake Shelton</td>
+          <td><button class="btn btn-sm"><i class="fas fa-cloud-download-alt"></i></button></td>
+          <td>2:45</td>
+          <td>Happy Anywhere </td>
+          <td>Happy Anywhere (feat. Gwen Stefani)</td>
+          <td>Country</td>
+          <td>
+            <div class="rating">
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="far fa-star"></span>
+              <span class="far fa-star"></span>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Kygo & Donna Summer</td>
+          <td><button class="btn btn-sm"><i class="fas fa-cloud-download-alt"></i></button></td>
+          <td>2:45</td>
+          <td>Hot Stuff </td>
+          <td>Hot Stuff</td>
+          <td>Dance</td>
+          <td>
+            <div class="rating">
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star-half-alt checked"></span>
+            </div>
+          </td>
+        </tr>
 
-        <table>
-          <tr>
-            <th>Artist</th>
-            <th><i class="fas fa-cloud"></i></th>
-            <th>Time</th>
-            <th>Track Title</th>
-            <th>Album</th>
-            <th>Genre</th>
-            <th>Ratings</th>
-          </tr>
-          <tr>
-            <td>Justin Bieber</td>
-            <td><i class="fas fa-cloud-download-alt"></i></td>
-            <td>3:45</td>
-            <td>Holy </td>
-            <td>Holy (feat. Chance the Rapper)</td>
-            <td>Pop</td>
-            <td>
-              <div class="rating">
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="far fa-star"></span>
-                <span class="far fa-star"></span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>Keith Urban & P!nk</td>
-            <td><i class="fas fa-cloud-download-alt"></i></td>
-            <td>3:35</td>
-            <td>One Too Many</td>
-            <td>The Speed Of Now</td>
-            <td>Country</td>
-            <td>
-              <div class="rating">
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>Luke Combs</td>
-            <td><i class="fas fa-cloud-download-alt"></i></td>
-            <td>2:32</td>
-            <td>Without You</td>
-            <td>What you see </td>
-            <td>Conuntry</td>
-            <td>
-              <div class="rating">
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="far fa-star"></span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>Andrew Jannakos</td>
-            <td><i class="fas fa-cloud-download-alt"></i></td>
-            <td>1:35</td>
-            <td>Gone Too Soon</td>
-            <td>Gone Too Soon Andrew Jannakos</td>
-            <td>Country</td>
-            <td>
-              <div class="rating">
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="far fa-star"></span>
-                <span class="far fa-star"></span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>Sam Smith</td>
-            <td><i class="fas fa-cloud-download-alt"></i></td>
-            <td>3:30</td>
-            <td>Diamonds</td>
-            <td>Diamonds Sam Smith</td>
-            <td>Pop</td>
-            <td>
-              <div class="rating">
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="far fa-star"></span>
-                <span class="far fa-star"></span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>Cardi B</td>
-            <td><i class="fas fa-cloud-download-alt"></i></td>
-            <td>2:30</td>
-            <td>WAP (feat. Megan Thee Stallion)</td>
-            <td>WAP</td>
-            <td>Hip-Hop / Rap</td>
-            <td>
-              <div class="rating">
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="far fa-star"></span>
-                <span class="far fa-star"></span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>Eric Church</td>
-            <td><i class="fas fa-cloud-download-alt"></i></td>
-            <td>2:45</td>
-            <td>Stick That in Your Country Song</td>
-            <td>Stick That in Your Country Song Eric Church</td>
-            <td>Country</td>
-            <td>
-              <div class="rating">
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="far fa-star"></span>
-                <span class="far fa-star"></span>
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Blake Shelton</td>
-            <td><i class="fas fa-cloud-download-alt"></i></td>
-            <td>2:45</td>
-            <td>Happy Anywhere </td>
-            <td>Happy Anywhere (feat. Gwen Stefani)</td>
-            <td>Country</td>
-            <td>
-              <div class="rating">
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="far fa-star"></span>
-                <span class="far fa-star"></span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>Kygo & Donna Summer</td>
-            <td><i class="fas fa-cloud-download-alt"></i></td>
-            <td>2:45</td>
-            <td>Hot Stuff </td>
-            <td>Hot Stuff</td>
-            <td>Dance</td>
-            <td>
-              <div class="rating">
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td>Chris Stapleton</td>
-            <td><i class="fas fa-cloud-download-alt"></i></td>
-            <td>2:43</td>
-            <td>Starting Over</td>
-            <td>Starting Over Chris Stapleton</td>
-            <td>Country</td>
-            <td>
-              <div class="rating">
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="far fa-star"></span>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>BTS</td>
-            <td><i class="fas fa-cloud-download-alt"></i></td>
-            <td>2:42</td>
-            <td>Dynamite (Slow Jam Remix)</td>
-            <td>Dynamite (Slow Jam Remix) by BTS</td>
-            <td> K-Pop</td>
-            <td>
-              <div class="rating">
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="far fa-star"></span>
-                <span class="far fa-star"></span>
-              </div>
-            </td>
-          </tr>
-
-          <tr>
-            <td>AJR</td>
-            <td><i class="fas fa-cloud-download-alt"></i></td>
-            <td>2:43</td>
-            <td>Bang!</td>
-            <td>Bang!</td>
-            <td> Alternative</td>
-            <td>
-              <div class="rating">
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="far fa-star"></span>
-              </div>
-            </td>
-          </tr>
-
-          <tr>
+        <tr>
+          <td>Chris Stapleton</td>
+          <td><button class="btn btn-sm"><i class="fas fa-cloud-download-alt"></i></button></td>
+          <td>2:43</td>
+          <td>Starting Over</td>
+          <td>Starting Over Chris Stapleton</td>
+          <td>Country</td>
+          <td>
+            <div class="rating">
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="far fa-star"></span>
+            </div>
+          </td>
+        </tr>
+        <tr>
           <td>BTS</td>
-          <td><i class="fas fa-cloud-download-alt"></i></td>
+          <td><button class="btn btn-sm"><i class="fas fa-cloud-download-alt"></i></button></td>
+          <td>2:42</td>
+          <td>Dynamite (Slow Jam Remix)</td>
+          <td>Dynamite (Slow Jam Remix) by BTS</td>
+          <td> K-Pop</td>
+          <td>
+            <div class="rating">
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="far fa-star"></span>
+              <span class="far fa-star"></span>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>AJR</td>
+          <td><button class="btn btn-sm"><i class="fas fa-cloud-download-alt"></i></button></td>
+          <td>2:43</td>
+          <td>Bang!</td>
+          <td>Bang!</td>
+          <td> Alternative</td>
+          <td>
+            <div class="rating">
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="far fa-star"></span>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td>BTS</td>
+          <td><button class="btn btn-sm"><i class="fas fa-cloud-download-alt"></i></button></td>
           <td>2:40</td>
           <td>Dynamite (Retro Remix)</td>
           <td>Dynamite (Retro Remix) by BTS</td>
@@ -273,10 +322,10 @@
             </div>
           </td>
         </tr>
-        
+
         <tr>
-        <td>24kGoldn</td>
-          <td><i class="fas fa-cloud-download-alt"></i></td>
+          <td>24kGoldn</td>
+          <td><button class="btn btn-sm"><i class="fas fa-cloud-download-alt"></i></button></td>
           <td>2:41</td>
           <td>Mood (feat. iann dior)</td>
           <td>Mood</td>
@@ -287,77 +336,67 @@
               <span class="fas fa-star checked"></span>
               <span class="fas fa-star checked"></span>
               <span class="fas fa-star checked"></span>
-              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star-half-alt checked"></span>
             </div>
           </td>
         </tr>
 
         <tr>
           <td>Gabby Barrett</td>
-            <td><i class="fas fa-cloud-download-alt"></i></td>
-            <td>2:41</td>
-            <td>I Hope</td>
-            <td>I Hope (feat. Charlie Puth)</td>
-            <td> Country</td>
-            <td>
-              <div class="rating">
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="fas fa-star checked"></span>
-                <span class="far fa-star"></span>
-                <span class="far fa-star"></span>
-              </div>
-            </td>
-          </tr>
+          <td><button class="btn btn-sm"><i class="fas fa-cloud-download-alt"></i></button></td>
+          <td>2:41</td>
+          <td>I Hope</td>
+          <td>I Hope (feat. Charlie Puth)</td>
+          <td> Country</td>
+          <td>
+            <div class="rating">
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="far fa-star"></span>
+              <span class="far fa-star"></span>
+            </div>
+          </td>
+        </tr>
 
-          <tr>
-            <td>Dan + Shay</td>
-              <td><i class="fas fa-cloud-download-alt"></i></td>
-              <td>2:45</td>
-              <td>I Should Probably Go To Bed)</td>
-              <td>I Should Probably Go To Bed by Dan + Shay</td>
-              <td> Country</td>
-              <td>
-                <div class="rating">
-                  <span class="fas fa-star checked"></span>
-                  <span class="fas fa-star checked"></span>
-                  <span class="fas fa-star checked"></span>
-                  <span class="fas fa-star checked"></span>
-                  <span class="fas fa-star checked"></span>
-                </div>
-              </td>
-            </tr>
-        </table>
-
-        <div>
-          <br>
-          <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-end">
-              <li class="page-item disabled">
-                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
-              </li>
-              <li class="page-item active"><a class="page-link" href="#">1</a></li>
-              <li class="page-item"><a class="page-link" href="#">2</a></li>
-              <li class="page-item"><a class="page-link" href="#">3</a></li>
-              <li class="page-item"><a class="page-link" href="#">4</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#">Next</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </fieldset>
-
-
-
-
+        <tr>
+          <td>Dan + Shay</td>
+          <td><button class="btn btn-sm"><i class="fas fa-cloud-download-alt"></i></button></td>
+          <td>2:45</td>
+          <td>I Should Probably Go To Bed</td>
+          <td>I Should Probably Go To Bed Dan + Shay</td>
+          <td> Country</td>
+          <td>
+            <div class="rating">
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+              <span class="fas fa-star checked"></span>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <br>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-end">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+          </li>
+          <li class="page-item active"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">4</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
   </div>
 
-
-
-  </form>
-
-  </fieldset>
 </body>
 
 </html>

@@ -1,52 +1,9 @@
-
-.jumbotron{
-    background-color: #cce5ff;
-    text-align:center;
-}
-
- .carousel-item img {
-  display: block;
-  height: 400px;
-  max-width: 100%;
-  line-height: 1;
-  margin:auto;
-  width: 900px;
-} 
 body {
   font-family: Arial;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-form.example input[type=text] {
-  padding: 10px;
-  font-size: 17px;
-  border: 1px solid grey;
-  float: left;
-  width: 50px;
-  background: #f1f1f1;
-}
-
-
-button:hover {
-  background: #0b7dda;
-}
-
-button:after {
-  clear: both;
-  display: table;
-  
-}
-
-.container {
-  clear: both;
-}
-
-.container input {
-  width: 100%;
-  clear: both;
+fieldset {
+  background-color: #eeeeee;
 }
 
 table {
@@ -60,7 +17,7 @@ td, table th {
   padding: 8px;
 }
 
- tr:nth-child(even)
+tr:nth-child(even)
  {background-color: #f2f2f2;}
 
 tr:hover {background-color: #ddd;}
