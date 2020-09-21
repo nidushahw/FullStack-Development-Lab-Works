@@ -22,14 +22,13 @@ tr:nth-child(even)
 
 tr:hover {background-color: #ddd;}
 
-th {
+th { 
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
   background-color: #2196F3;
   color: white;
 }
-
 .checked {
   color: orange;
 }
