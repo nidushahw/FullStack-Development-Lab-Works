@@ -1,0 +1,66 @@
+/**** Add Background Image CSS to the body element *****/
+
+
+/**** Add H1 center alignment ****/
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url("Roulette.jpg");
+    background-size: 100%;
+  }
+  input,
+  label {
+    display: block;
+  }
+  input {
+    font-family: Arial, sans-serif;
+    font-weight: 300;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 14px;
+    line-height: 20px;
+    height: 48px;
+    padding: 12px;
+    border: 1px solid #adadad;
+    border-radius: 2px;
+  }
+  label {
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 20px;
+    display: block;
+    margin: 0 0 5px;
+    text-align: center;
+  }
+  h1{
+       text-align: center;
+  }
+  
+  /**** Add these selectors to HTML elements ***/
+  #playerTable {
+    width: 100%;
+  }
+  
+  #playButton {
+    width: 100%;
+    font-weight: bold;
+    background-color: #d85757;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /*** Add to class main-container => center alignment and transparency ****/
+  .main-container {
+    background-color: #7aec89;
+    width: 50%;
+    padding-bottom: 25px;
+    border-radius: 2%;
+    margin-left:100px;
+    margin:100px;
+    opacity: 0.6;
+    
+    /***  add margin and opacity here *****/
+  
+  }
