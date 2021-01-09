@@ -1,0 +1,46 @@
+body {
+    font-family: Arial;
+    background-image: url("./images/Background.jpg");
+    background-repeat: no-repeat;
+    background-size: 1500px 1200px;
+    background-color: #cccccc;
+}
+
+fieldset {
+    background-color: #eeeeee;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, table th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #2196F3;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Music Search</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</head>
+
+<body>
+<br>
+<div class="container">
+    <form id="searchForm">
+        <fieldset class="border p-2">
+            <legend class="w-auto">Music Search</legend>
+            <div class="form-group row">
+                <label for="artist" class="col-sm-2 col-form-label">Artist:</label>
+                <div class="col-sm-8">
+                    <input type="text" id="artist" class="form-control" name="Artist"
+                           placeholder="Enter the Artist Name">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="title" class="col-sm-2 col-form-label">Song:</label>
+                <div class="col-sm-8">
+                    <input type="text" id="title" class="form-control" name="Song Title"
+                           placeholder="Enter the Song Title">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="album" class="col-sm-2 col-form-label">Album:</label>
+                <div class="col-sm-8">
+                    <input type="text" id="album" class="form-control" name="Album" placeholder="Enter the Album Name">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="genre" class="col-sm-2 col-form-label">Genre:</label>
+                <div class="col-sm-5">
+                    <div class="btn-group">
+                        <select name="genre" id="genre" style="width: 16rem; height: 2rem;">
+                            <option value="Genre">Select a Genre</option>
+                            <option value="Country">Country</option>
+                            <option value="Hip-Hop">Hip-Hop</option>
+                            <option value="K-Pop">K-Pop</option>
+                            <option value="Pop">Pop/Rap</option>
+                            <option value="Classic">Classic</option>
+                            <option value="Jazz">Jazz</option>
+                            <option value="Romance">Romance</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+                <div class="col-sm-3">
+                    <button type="reset" class="btn btn-primary">Reset</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</div>
+<br><br>
+<div class="Container">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-11">
+            <div id="favorites" class="row">
+            </div>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+</div>
+<br><br>
+<div class="container">
+    <div>
+        <table id="musicTable" class="hidden">
+            <tr>
+                <th>Artist</th>
+                <th>
+                    <span class="d-inline-block" data-toggle="tooltip" data-placement="top" title="Download">
+                      <button class="btn btn-sm" disabled>
+                        <i class="fas fa-cloud"></i>
+                      </button>
+                    </span>
+                <th>
+                    <span class="d-inline-block" data-toggle="tooltip" data-placement="top" title="Favourite">
+                      <button id="favourite" class="btn btn-sm" disabled>
+                       <i class="fas fa-heart"></i>
+                      </button>
+                    </span>
+                </th>
+                <th>Time</th>
+                <th>Track Title</th>
+                <th>Album</th>
+                <th>Genre</th>
+                <th>Ratings</th>
+            </tr>
+        </table>
+    </div>
+</div>
+<br><br>
+<script src="script.js"></script>
+</body>
+</html>

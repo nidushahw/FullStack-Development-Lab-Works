@@ -1,0 +1,10 @@
+{
+    "name": "music-search-gbc",
+    "description": "Music Search App",
+    "author": "Nidusha Lakmali Hewawilladdara",
+    "version": "1.0.0",
+    "main": "server.js",
+    "dependencies": {
+        "node-static": "^0.7.11"
+    }
+}
