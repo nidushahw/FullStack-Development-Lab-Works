@@ -9,8 +9,8 @@ const router = require('./routes/musicRoutes');
 const socketEvent = require("./models/soketEvent");
 const downloadEvent = require("./models/downloadEvent");
 
-const connectionString = "mongodb+srv://dbUser:bUQTKOpc8hGV5JmX@cluster0.apsw0.mongodb.net/music-search-gbc?readPreference=primary&appname=Mongodb%20Compass";
-// const connectionString = "mongodb://localhost:27017/music-search-gbc?readPreference=primary&appname=Mongodb%20Compass&ssl=false";
+
+const connectionString = "mongodb://localhost:27017/music-search-gbc?readPreference=primary&appname=Mongodb%20Compass&ssl=false";
 
 mongoose.connect(connectionString, {userNewURLParser: true})
     .then(() => {
